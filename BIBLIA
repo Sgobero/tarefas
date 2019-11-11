@@ -1,0 +1,50 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main(){
+
+    ifstream leitura;
+
+    leitura.open("biblia.txt");
+
+    if(!leitura.is_open()){
+        cout << "Nao foi possivel abrir";
+    }
+
+    string palavras;
+    int vezes = 0;
+    while(!leitura.eof()){
+
+        getline(leitura, palavras);
+
+        int pos = palavras.find("Jesus");
+
+        if(pos != -1){
+        vezes++;
+        }
+
+
+        int pos1 = palavras.find("jesus");
+
+        if(pos1 != -1){
+        vezes++;
+        }
+
+        int pos2 = palavras.find("JESUS");
+
+        if(pos2 != -1){
+        vezes++;
+        }
+
+
+
+    }
+
+    cout << vezes;
+
+
+
+    return 0;
+}
